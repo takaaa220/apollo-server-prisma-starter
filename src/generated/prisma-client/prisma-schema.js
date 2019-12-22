@@ -50,6 +50,7 @@ type User {
   id: ID!
   username: String!
   password: String!
+  address: String
 }
 
 type UserConnection {
@@ -61,6 +62,7 @@ type UserConnection {
 input UserCreateInput {
   username: String!
   password: String!
+  address: String
 }
 
 type UserEdge {
@@ -75,6 +77,8 @@ enum UserOrderByInput {
   username_DESC
   password_ASC
   password_DESC
+  address_ASC
+  address_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -85,6 +89,7 @@ type UserPreviousValues {
   id: ID!
   username: String!
   password: String!
+  address: String
 }
 
 type UserSubscriptionPayload {
@@ -108,11 +113,13 @@ input UserSubscriptionWhereInput {
 input UserUpdateInput {
   username: String
   password: String
+  address: String
 }
 
 input UserUpdateManyMutationInput {
   username: String
   password: String
+  address: String
 }
 
 input UserWhereInput {
@@ -158,6 +165,20 @@ input UserWhereInput {
   password_not_starts_with: String
   password_ends_with: String
   password_not_ends_with: String
+  address: String
+  address_not: String
+  address_in: [String!]
+  address_not_in: [String!]
+  address_lt: String
+  address_lte: String
+  address_gt: String
+  address_gte: String
+  address_contains: String
+  address_not_contains: String
+  address_starts_with: String
+  address_not_starts_with: String
+  address_ends_with: String
+  address_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
